@@ -11,6 +11,21 @@ const codes = [
   "a"
 ];
 
+let correctCode = 0;
+
 function init() {
-  // your code here
+  document.body.addEventListener('keydown', function(event) {
+    if (codes[correctCode] === event.key) {
+      correctCode++;
+    }
+    else {
+      correctCode = 0;
+    }
+    if (correctCode === 10) {
+      correctCode = 0;
+      alert('Congratz, you are correct!');
+    }
+  })
 }
+
+// your code here
